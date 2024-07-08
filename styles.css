@@ -1,62 +1,16 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
-
-.login-container, .create-account-container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    text-align: center;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-label, input {
-    margin-bottom: 10px;
-}
-
 button {
-    background-color: #007bff;
-    color: #fff;
+    padding: 10px 20px;
     border: none;
-    padding: 10px;
     cursor: pointer;
-    border-radius: 5px;
+    font-size: 16px;
 }
 
-button:hover {
-    background-color: #0056b3;
+button.create-account-button {
+    background-color: #3498db; /* Blue color for create account button */
+    color: #fff; /* White text color */
 }
 
-#login-message, #create-account-message {
-    margin-top: 10px;
-    color: red;
-}
-
-.create-account-link {
-    margin-top: 10px;
-}
-
-.create-account-link a {
-    color: #007bff;
-    cursor: pointer;
-}
-
-.create-account-link a:hover {
-    text-decoration: underline;
-}
-
-.create-account-container {
-    display: none; /* Initially hide create account section */
+button.back-to-login-button {
+    background-color: #e67e22; /* Orange color for back to login button */
+    color: #fff; /* White text color */
 }
