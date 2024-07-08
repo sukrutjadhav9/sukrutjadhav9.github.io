@@ -67,7 +67,6 @@ document.getElementById("create-account-form").addEventListener("submit", functi
     localStorage.setItem("users", JSON.stringify(users));
 
     document.getElementById("create-account-message").textContent = "Account created successfully!";
-    // After creating account, show the login form and hide create account form
-    document.querySelector(".create-account-container").style.display = "none";
-    document.querySelector(".login-container").style.display = "block";
+    // After creating account, redirect to the login page
+    window.location.href = "index.html";
 });
