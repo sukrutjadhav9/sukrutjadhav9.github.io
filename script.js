@@ -6,6 +6,14 @@ document.getElementById("create-account-toggle").addEventListener("click", funct
     document.querySelector(".login-container").style.display = "none";
 });
 
+document.getElementById("login-link").addEventListener("click", function(event) {
+    event.preventDefault();
+    // Hide create account section
+    document.querySelector(".create-account-container").style.display = "none";
+    // Show login form
+    document.querySelector(".login-container").style.display = "block";
+});
+
 document.getElementById("login-form").addEventListener("submit", function(event) {
     event.preventDefault();
 
