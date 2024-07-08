@@ -8,12 +8,13 @@ body {
     margin: 0;
 }
 
-.login-container {
+.login-container, .create-account-container {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 300px;
+    text-align: center;
 }
 
 form {
@@ -38,7 +39,24 @@ button:hover {
     background-color: #0056b3;
 }
 
-#login-message {
+#login-message, #create-account-message {
     margin-top: 10px;
     color: red;
+}
+
+.create-account-link {
+    margin-top: 10px;
+}
+
+.create-account-link a {
+    color: #007bff;
+    cursor: pointer;
+}
+
+.create-account-link a:hover {
+    text-decoration: underline;
+}
+
+.create-account-container {
+    display: none; /* Initially hide create account section */
 }
