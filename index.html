@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Hub</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="login-container" class="container">
+        <h2>Login</h2>
+        <form id="login-form">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+            </div>
+            <button type="submit" class="btn">Login</button>
+            <p id="login-message" style="color: red;"></p>
+        </form>
+        <p id="create-account-toggle" class="link">Create Account</p>
+    </div>
+
+    <div id="create-account-container" class="container" style="display: none;">
+        <h2>Create Account</h2>
+        <form id="create-account-form">
+            <div class="form-group">
+                <label for="new-username">New Username:</label>
+                <input type="text" id="new-username" required>
+            </div>
+            <div class="form-group">
+                <label for="new-password">New Password:</label>
+                <input type="password" id="new-password" required>
+            </div>
+            <div class="form-group">
+                <label for="auth-code">Authentication Code:</label>
+                <input type="text" id="auth-code" required>
+            </div>
+            <button type="submit" class="btn create-account-button">Create Account</button>
+            <p id="create-account-message" style="color: green;"></p>
+        </form>
+        <p id="back-to-login" class="link">Back to Login</p>
+    </div>
+
+    <div id="homepage" style="display: none;">
+        <header>
+            <nav class="navbar">
+                <div class="container">
+                    <ul class="nav-menu">
+                        <li><a href="#">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#">GS1</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">History</a></li>
+                                <li><a href="#">Geography</a></li>
+                                <li><a href="#">Indian Society</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#">GS2</a>
+                            <ul class="dropdown-menu">
+                                <!-- Add GS2 sub-menu items here -->
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#">GS3</a>
+                            <ul class="dropdown-menu">
+                                <!-- Add GS3 sub-menu items here -->
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#">GS4</a>
+                            <ul class="dropdown-menu">
+                                <!-- Add GS4 sub-menu items here -->
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#">OPTIONAL</a>
+                            <ul class="dropdown-menu">
+                                <!-- Add OPTIONAL sub-menu items here -->
+                            </ul>
+                        </li>
+                        <li><a href="#" id="logout">Logout</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <div class="hero">
+            <div class="hero-text">
+                <h1>Welcome to the Knowledge Hub!</h1>
+                <p>Your gateway to comprehensive learning resources</p>
+                <a href="#" class="hero-button">Get Started</a>
+            </div>
+        </div>
+
+        <div class="content">
+            <h2>Explore Our Sections</h2>
+            <div class="section-cards">
+                <div class="card">
+                    <h3>GS1</h3>
+                    <p>History, Geography, Indian Society</p>
+                </div>
+                <div class="card">
+                    <h3>GS2</h3>
+                    <p>Governance, Constitution, Polity</p>
+                </div>
+                <div class="card">
+                    <h3>GS3</h3>
+                    <p>Economics, Science & Technology</p>
+                </div>
+                <div class="card">
+                    <h3>GS4</h3>
+                    <p>Ethics, Integrity, Aptitude</p>
+                </div>
+                <div class="card">
+                    <h3>Optional</h3>
+                    <p>Additional subjects</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Knowledge Hub. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
