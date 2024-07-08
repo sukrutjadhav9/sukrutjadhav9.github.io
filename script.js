@@ -3,7 +3,7 @@ document.getElementById("login-form").addEventListener("submit", function(event)
 
     // Define allowed users and their passwords (you can extend this list)
     const users = [
-        { username: "user1", password: "password1" },
+        { username: "sukrut", password: "sukrut2" },
         { username: "user2", password: "password2" }
         // Add more users as needed
     ];
