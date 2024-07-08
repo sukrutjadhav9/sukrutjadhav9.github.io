@@ -7,15 +7,6 @@ document.getElementById("create-account-toggle").addEventListener("click", funct
     document.querySelector(".create-account-container").style.display = "block";
 });
 
-// Event listener for showing the login section
-document.getElementById("login-link").addEventListener("click", function(event) {
-    event.preventDefault();
-    // Hide create account form
-    document.querySelector(".create-account-container").style.display = "none";
-    // Show login form
-    document.querySelector(".login-container").style.display = "block";
-});
-
 // Event listener for back to login link on create account section
 document.getElementById("login-link-create").addEventListener("click", function(event) {
     event.preventDefault();
