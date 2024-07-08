@@ -8,23 +8,23 @@
 </head>
 <body>
     <div class="login-container">
-        <h2>Login</h2>
+        <!-- Login Form -->
         <form id="login-form">
+            <h2>Login</h2>
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
             <button type="submit">Login</button>
             <p id="login-message"></p>
+            <p><a href="#" id="create-account-toggle">Create New Account</a></p>
         </form>
-        <p class="create-account-link">
-            <a href="#" id="create-account-toggle">Create Account</a>
-        </p>
     </div>
 
-    <div class="create-account-container">
-        <h2>Create Account</h2>
+    <div class="create-account-container" style="display: none;">
+        <!-- Create Account Form -->
         <form id="create-account-form">
+            <h2>Create Account</h2>
             <label for="new-username">New Username:</label>
             <input type="text" id="new-username" name="new-username" required>
             <label for="new-password">New Password:</label>
@@ -33,9 +33,7 @@
             <input type="text" id="auth-code" name="auth-code" required>
             <button type="submit">Create Account</button>
             <p id="create-account-message"></p>
-            <p class="login-link">
-                <a href="#" id="login-link-create">Back to Login</a>
-            </p>
+            <p><a href="#" id="login-link-create">Back to Login</a></p>
         </form>
     </div>
 
