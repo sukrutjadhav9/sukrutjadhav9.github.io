@@ -1,46 +1,75 @@
-// JavaScript for Login and Create Account functionality
+// Function to add a new todo item
+function addTodoItem(todoText) {
+    let todoList = document.getElementById("todo-list");
+    let li = document.createElement("li");
+    li.textContent = todoText;
+    todoList.appendChild(li);
+}
 
-document.addEventListener('DOMContentLoaded', function() {
-    const loginForm = document.getElementById('login-form');
-    const createAccountForm = document.getElementById('create-account-form');
-    const createAccountToggle = document.getElementById('create-account-toggle');
-    const backToLogin = document.getElementById('back-to-login');
+// Event listener for todo form submission
+document.getElementById("todo-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    let todoInput = document.getElementById("todo-input");
+    let todoText = todoInput.value.trim();
 
-    createAccountToggle.addEventListener('click', function() {
-        document.getElementById('login-container').style.display = 'none';
-        document.getElementById('create-account-container').style.display = 'block';
-    });
+    if (todoText !== "") {
+        addTodoItem(todoText);
+        todoInput.value = "";
+    }
+});
 
-    backToLogin.addEventListener('click', function() {
-        document.getElementById('create-account-container').style.display = 'none';
-        document.getElementById('login-container').style.display = 'block';
-    });
+// Event listener for showing the create account section
+document.getElementById("create-account-toggle").addEventListener("click", function(event) {
+    event.preventDefault();
+    // Hide login form
+    document.querySelector(".login-container").style.display = "none";
+    // Show create account form
+    document.querySelector(".create-account-container").style.display = "block";
+});
 
-    loginForm.addEventListener('submit', function(event) {
-        event.preventDefault();
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
-        // Perform login authentication here
-        if (username === 'your_username' && password === 'your_password') {
-            document.getElementById('login-container').style.display = 'none';
-            document.getElementById('homepage').style.display = 'block';
-        } else {
-            document.getElementById('login-message').textContent = 'Invalid username or password. Please try again.';
-        }
-    });
+// Event listener for handling account creation
+document.getElementById("create-account-form").addEventListener("submit", function(event) {
+    event.preventDefault();
 
-    createAccountForm.addEventListener('submit', function(event) {
-        event.preventDefault();
-        const newUsername = document.getElementById('new-username').value;
-        const newPassword = document.getElementById('new-password').value;
-        const authCode = document.getElementById('auth-code').value;
-        // Perform account creation and authentication code validation here
-        if (authCode === '6447') {
-            // Save newUsername and newPassword somewhere (e.g., localStorage or server-side)
-            document.getElementById('create-account-message').textContent = 'Account created successfully!';
-            document.getElementById('create-account-form').reset();
-        } else {
-            document.getElementById('create-account-message').textContent = 'Invalid authentication code. Please try again.';
-        }
-    });
+    let newUsername = document.getElementById("new-username").value;
+    let newPassword = document.getElementById("new-password").value;
+    let authCode = document.getElementById("auth-code").value;
+
+    if (authCode !== "6447") {
+        document.getElementById("create-account-message").textContent = "Invalid authentication code.";
+        return;
+    }
+
+    // Check if username already exists
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+    let existingUser = users.find(user => user.username === newUsername);
+
+    if (existingUser) {
+        document.getElementById("create-account-message").textContent = "Username already exists.";
+        return;
+    }
+
+    // Add new user to local storage
+    users.push({ username: newUsername, password: newPassword });
+    localStorage.setItem("users", JSON.stringify(users));
+
+    document.getElementById("create-account-message").textContent = "Account created successfully!";
+    // Reset create account form fields (optional)
+    document.getElementById("new-username").value = "";
+    document.getElementById("new-password").value = "";
+    document.getElementById("auth-code").value = "";
+
+    // Hide create account form
+    document.querySelector(".create-account-container").style.display = "none";
+    // Show login form
+    document.querySelector(".login-container").style.display = "block";
+});
+
+// Event listener for showing the login section
+document.getElementById("back-to-login").addEventListener("click", function(event) {
+    event.preventDefault();
+    // Hide create account form
+    document.querySelector(".create-account-container").style.display = "none";
+    // Show login form
+    document.querySelector(".login-container").style.display = "block";
 });
