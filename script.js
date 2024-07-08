@@ -7,20 +7,6 @@ document.getElementById("create-account-toggle").addEventListener("click", funct
     document.querySelector(".create-account-container").style.display = "block";
 });
 
-// Event listener for back to login link on create account section
-document.getElementById("login-link-create").addEventListener("click", function(event) {
-    event.preventDefault();
-    // Reset create account form fields (optional)
-    document.getElementById("new-username").value = "";
-    document.getElementById("new-password").value = "";
-    document.getElementById("auth-code").value = "";
-
-    // Hide create account form
-    document.querySelector(".create-account-container").style.display = "none";
-    // Show login form
-    document.querySelector(".login-container").style.display = "block";
-});
-
 // Event listener for handling account creation
 document.getElementById("create-account-form").addEventListener("submit", function(event) {
     event.preventDefault();
@@ -59,8 +45,8 @@ document.getElementById("create-account-form").addEventListener("submit", functi
     document.querySelector(".login-container").style.display = "block";
 });
 
-// Event listener for back to login link/button on create account section
-document.getElementById("back-to-login").addEventListener("click", function(event) {
+// Event listener for showing the login section
+document.getElementById("login-link").addEventListener("click", function(event) {
     event.preventDefault();
     // Hide create account form
     document.querySelector(".create-account-container").style.display = "none";
