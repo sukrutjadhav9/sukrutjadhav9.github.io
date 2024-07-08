@@ -19,6 +19,11 @@ document.getElementById("login-link").addEventListener("click", function(event) 
 // Event listener for back to login link on create account section
 document.getElementById("login-link-create").addEventListener("click", function(event) {
     event.preventDefault();
+    // Reset create account form fields (optional)
+    document.getElementById("new-username").value = "";
+    document.getElementById("new-password").value = "";
+    document.getElementById("auth-code").value = "";
+
     // Hide create account form
     document.querySelector(".create-account-container").style.display = "none";
     // Show login form
@@ -52,7 +57,7 @@ document.getElementById("create-account-form").addEventListener("submit", functi
     localStorage.setItem("users", JSON.stringify(users));
 
     document.getElementById("create-account-message").textContent = "Account created successfully!";
-    // Reset create account form fields
+    // Reset create account form fields (optional)
     document.getElementById("new-username").value = "";
     document.getElementById("new-password").value = "";
     document.getElementById("auth-code").value = "";
