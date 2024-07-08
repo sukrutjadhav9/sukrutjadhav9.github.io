@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Login and Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="container">
+    <!-- Login Section -->
+    <div id="login-section" class="container">
         <div class="login-container">
             <!-- Login Form -->
             <form id="login-form" class="form">
@@ -44,11 +45,64 @@
                 </div>
                 <button type="submit" class="btn create-account-button">Create Account</button>
                 <p id="create-account-message"></p>
-                <p><a href="#" id="back-to-login" class="back-to-login-link">Back to Login</a></p>
+                <p class="back-to-login-link"><a href="#" id="back-to-login">Back to Login</a></p>
             </form>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <!-- Dashboard Section -->
+    <div id="dashboard-section" class="container" style="display: none;">
+        <nav class="navbar">
+            <ul>
+                <li><a href="#" id="home-link">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">GS1</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">History</a></li>
+                        <li><a href="#">Geography</a></li>
+                        <li><a href="#">Indian Society</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">GS2</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Polity</a></li>
+                        <li><a href="#">Welfare</a></li>
+                        <li><a href="#">Governance</a></li>
+                        <li><a href="#">IR Diplomacy</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">GS3</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Economy</a></li>
+                        <li><a href="#">Food/Agri</a></li>
+                        <li><a href="#">Environment</a></li>
+                        <li><a href="#">Security and Disaster Management</a></li>
+                        <li><a href="#">Science and Technology</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">GS4</a></li>
+                <li><a href="#">OPTIONAL</a></li>
+                <li><a href="#" id="logout-link">Logout</a></li>
+            </ul>
+        </nav>
+
+        <div class="main-content">
+            <h1>Welcome to Your Dashboard</h1>
+            <div class="todo-list">
+                <h2>Todo List</h2>
+                <ul id="todo-list">
+                    <!-- Todo items will be dynamically added here -->
+                </ul>
+                <form id="todo-form">
+                    <input type="text" id="todo-input" placeholder="Add new todo">
+                    <button type="submit">Add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
