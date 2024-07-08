@@ -1,3 +1,9 @@
+document.getElementById("create-account-toggle").addEventListener("click", function(event) {
+    event.preventDefault();
+    // Toggle display of create account section
+    document.querySelector(".create-account-container").style.display = "block";
+});
+
 document.getElementById("login-form").addEventListener("submit", function(event) {
     event.preventDefault();
 
