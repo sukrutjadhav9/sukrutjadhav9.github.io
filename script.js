@@ -1,11 +1,21 @@
 document.getElementById("login-form").addEventListener("submit", function(event) {
     event.preventDefault();
 
-    // Simulate login logic (replace with actual validation or API call)
+    // Define allowed users and their passwords (you can extend this list)
+    const users = [
+        { username: "user1", password: "password1" },
+        { username: "user2", password: "password2" }
+        // Add more users as needed
+    ];
+
+    // Get input values
     let username = document.getElementById("username").value;
     let password = document.getElementById("password").value;
 
-    if (username === "admin" && password === "password") {
+    // Check if credentials match
+    let authenticatedUser = users.find(user => user.username === username && user.password === password);
+
+    if (authenticatedUser) {
         // Successful login
         document.getElementById("login-message").textContent = "Login successful!";
         // Redirect or show logged-in content
