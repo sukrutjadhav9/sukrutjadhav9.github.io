@@ -1,62 +1,76 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+/* General button styling */
+button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
 }
 
+/* Blue create account button */
+button.create-account-button {
+    background-color: #3498db;
+    color: #fff;
+}
+
+/* Orange back to login button */
+button.back-to-login-button {
+    background-color: #e67e22;
+    color: #fff;
+}
+
+/* Form styling */
 .login-container, .create-account-container {
-    background-color: #fff;
+    max-width: 400px;
+    margin: 50px auto;
     padding: 20px;
+    background-color: #f0f0f0;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+}
+
+.login-container h2, .create-account-container h2 {
+    margin-top: 0;
+    font-size: 24px;
     text-align: center;
 }
 
-form {
+.login-container form, .create-account-container form {
     display: flex;
     flex-direction: column;
 }
 
-label, input {
-    margin-bottom: 10px;
+.login-container label, .create-account-container label {
+    margin-bottom: 8px;
 }
 
-button {
-    background-color: #007bff;
-    color: #fff;
+.login-container input, .create-account-container input {
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-container button, .create-account-container button {
+    padding: 10px 20px;
     border: none;
-    padding: 10px;
     cursor: pointer;
+    font-size: 16px;
     border-radius: 5px;
 }
 
-button:hover {
-    background-color: #0056b3;
-}
-
-#login-message, #create-account-message {
+.login-container p, .create-account-container p {
     margin-top: 10px;
-    color: red;
+    text-align: center;
 }
 
-.create-account-link {
-    margin-top: 10px;
-}
-
-.create-account-link a {
-    color: #007bff;
-    cursor: pointer;
-}
-
-.create-account-link a:hover {
-    text-decoration: underline;
+.login-container #create-account-toggle {
+    text-align: center;
+    display: block;
+    color: #3498db;
+    text-decoration: none;
 }
 
 .create-account-container {
-    display: none; /* Initially hide create account section */
+    display: none;
 }
