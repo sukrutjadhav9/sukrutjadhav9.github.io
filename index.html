@@ -3,51 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="login-container">
-            <!-- Login Form -->
-            <form id="login-form" class="form">
-                <h2>Login</h2>
-                <div class="form-group">
-                    <label for="username">Username:</label>
-                    <input type="text" id="username" name="username" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <button type="submit" class="btn login-button">Login</button>
-                <p id="login-message"></p>
-                <p><a href="#" id="create-account-toggle" class="create-account-link">Create New Account</a></p>
-            </form>
-        </div>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <ul class="nav-menu">
+                    <li><a href="#">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#">GS1</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">History</a></li>
+                            <li><a href="#">Geography</a></li>
+                            <li><a href="#">Indian Society</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">GS2</a>
+                        <ul class="dropdown-menu">
+                            <!-- Add GS2 sub-menu items here -->
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">GS3</a>
+                        <ul class="dropdown-menu">
+                            <!-- Add GS3 sub-menu items here -->
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">GS4</a>
+                        <ul class="dropdown-menu">
+                            <!-- Add GS4 sub-menu items here -->
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">OPTIONAL</a>
+                        <ul class="dropdown-menu">
+                            <!-- Add OPTIONAL sub-menu items here -->
+                        </ul>
+                    </li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
-        <div class="create-account-container" style="display: none;">
-            <!-- Create Account Form -->
-            <form id="create-account-form" class="form">
-                <h2>Create Account</h2>
-                <div class="form-group">
-                    <label for="new-username">New Username:</label>
-                    <input type="text" id="new-username" name="new-username" required>
-                </div>
-                <div class="form-group">
-                    <label for="new-password">New Password:</label>
-                    <input type="password" id="new-password" name="new-password" required>
-                </div>
-                <div class="form-group">
-                    <label for="auth-code">Authentication Code:</label>
-                    <input type="text" id="auth-code" name="auth-code" required>
-                </div>
-                <button type="submit" class="btn create-account-button">Create Account</button>
-                <p id="create-account-message"></p>
-            </form>
-        </div>
+    <div class="content">
+        <h1>Welcome to the Homepage!</h1>
+        <!-- Add content for the homepage here -->
     </div>
 
-    <script src="script.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 </html>
