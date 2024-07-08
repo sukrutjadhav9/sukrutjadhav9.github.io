@@ -67,3 +67,12 @@ document.getElementById("create-account-form").addEventListener("submit", functi
     // Show login form
     document.querySelector(".login-container").style.display = "block";
 });
+
+// Event listener for back to login link/button on create account section
+document.getElementById("back-to-login").addEventListener("click", function(event) {
+    event.preventDefault();
+    // Hide create account form
+    document.querySelector(".create-account-container").style.display = "none";
+    // Show login form
+    document.querySelector(".login-container").style.display = "block";
+});
