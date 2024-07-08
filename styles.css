@@ -1,202 +1,103 @@
-/* General Styles */
+/* Reset default browser styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-/* Login and Create Account Styles */
-.container {
-    background-color: #fff;
+    background-color: #f0f0f0;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    width: 300px;
-    text-align: center;
-    margin: 50px auto;
 }
 
-h2 {
-    margin-bottom: 20px;
-}
-
-.form-group {
-    margin-bottom: 15px;
-    text-align: left;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.form-group input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-.btn {
-    padding: 10px 20px;
-    background-color: #007bff;
-    border: none;
-    border-radius: 4px;
-    color: white;
-    cursor: pointer;
-    width: 100%;
-}
-
-.btn:hover {
-    background-color: #0056b3;
-}
-
-.create-account-button {
-    background-color: #28a745;
-}
-
-.create-account-button:hover {
-    background-color: #218838;
-}
-
-.link {
-    color: #007bff;
-    cursor: pointer;
-    margin-top: 15px;
-    display: block;
-}
-
-.link:hover {
-    text-decoration: underline;
-}
-
-/* Navbar Styles */
 .navbar {
+    overflow: hidden;
     background-color: #333;
-    padding: 10px 0;
 }
 
-.navbar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.navbar .nav-menu {
-    list-style: none;
-    display: flex;
+.navbar ul {
+    list-style-type: none;
     margin: 0;
     padding: 0;
+    display: flex;
 }
 
-.navbar .nav-menu li {
-    margin-right: 20px;
+.navbar li {
+    float: left;
+}
+
+.navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown {
     position: relative;
 }
 
-.navbar .nav-menu li a {
-    color: #fff;
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
     text-decoration: none;
-    font-size: 16px;
+    display: block;
+    text-align: left;
 }
 
-.navbar .nav-menu li a:hover {
-    color: #f0f0f0;
-}
-
-.navbar .nav-menu .dropdown:hover .dropdown-menu {
+.dropdown:hover .dropdown-content {
     display: block;
 }
 
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    background-color: #444;
-    padding: 10px;
-    list-style: none;
-    top: 100%;
-    left: 0;
-    border-radius: 4px;
-}
-
-.dropdown-menu li {
-    margin-bottom: 10px;
-}
-
-.dropdown-menu li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-/* Hero Section Styles */
-.hero {
-    background: url('../images/hero-bg.jpg') no-repeat center center/cover;
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    text-align: center;
-}
-
-.hero-text {
-    background: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    border-radius: 8px;
-}
-
-.hero h1 {
-    font-size: 48px;
-    margin-bottom: 10px;
-}
-
-.hero p {
-    font-size: 20px;
-    margin-bottom: 20px;
-}
-
-.hero-button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-/* Content Styles */
-.content {
-    padding: 20px;
-}
-
-.section-cards {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.card {
+.todo-container {
+    max-width: 600px;
+    margin: 20px auto;
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    width: 30%;
-    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.card h3 {
-    font-size: 24px;
+#todo-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#todo-list li {
     margin-bottom: 10px;
 }
 
-/* Footer Styles */
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+#todo-form {
+    margin-top: 20px;
+}
+
+#todo-input {
+    padding: 10px;
+    width: 70%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#todo-form button {
+    padding: 10px;
+    background-color: #3498db;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#todo-form button:hover {
+    background-color: #2980b9;
 }
