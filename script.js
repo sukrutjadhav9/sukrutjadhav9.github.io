@@ -1,46 +1,31 @@
+// Event listener for showing the create account section
 document.getElementById("create-account-toggle").addEventListener("click", function(event) {
     event.preventDefault();
-    // Toggle display of create account section
-    document.querySelector(".create-account-container").style.display = "block";
     // Hide login form
     document.querySelector(".login-container").style.display = "none";
+    // Show create account form
+    document.querySelector(".create-account-container").style.display = "block";
 });
 
+// Event listener for showing the login section
 document.getElementById("login-link").addEventListener("click", function(event) {
     event.preventDefault();
-    // Hide create account section
+    // Hide create account form
     document.querySelector(".create-account-container").style.display = "none";
     // Show login form
     document.querySelector(".login-container").style.display = "block";
 });
 
+// Event listener for back to login link on create account section
 document.getElementById("login-link-create").addEventListener("click", function(event) {
     event.preventDefault();
-    // Hide create account section
+    // Hide create account form
     document.querySelector(".create-account-container").style.display = "none";
     // Show login form
     document.querySelector(".login-container").style.display = "block";
 });
 
-document.getElementById("login-form").addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    let username = document.getElementById("username").value;
-    let password = document.getElementById("password").value;
-
-    // Check if credentials match existing users in local storage
-    let users = JSON.parse(localStorage.getItem("users")) || [];
-    let authenticatedUser = users.find(user => user.username === username && user.password === password);
-
-    if (authenticatedUser) {
-        document.getElementById("login-message").textContent = "Login successful!";
-        // Redirect or show logged-in content
-        // Example: window.location.href = "/dashboard.html";
-    } else {
-        document.getElementById("login-message").textContent = "Invalid username or password.";
-    }
-});
-
+// Event listener for handling account creation
 document.getElementById("create-account-form").addEventListener("submit", function(event) {
     event.preventDefault();
 
@@ -67,7 +52,13 @@ document.getElementById("create-account-form").addEventListener("submit", functi
     localStorage.setItem("users", JSON.stringify(users));
 
     document.getElementById("create-account-message").textContent = "Account created successfully!";
-    // After creating account, redirect to the login page
+    // Reset create account form fields
+    document.getElementById("new-username").value = "";
+    document.getElementById("new-password").value = "";
+    document.getElementById("auth-code").value = "";
+
+    // Hide create account form
     document.querySelector(".create-account-container").style.display = "none";
+    // Show login form
     document.querySelector(".login-container").style.display = "block";
 });
